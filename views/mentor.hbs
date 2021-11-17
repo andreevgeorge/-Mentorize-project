@@ -1,0 +1,24 @@
+<div class="card mb-3 mt-5 mx-auto" style="max-width: 700px">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://профильцентр.рф/image/cache/catalog/tovar/shtaketnik/111-1200x800.jpg "
+        class="img-fluid rounded-start" alt="22">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title mb-4"><a style="text-decoration: none" class="text-secondary" ;
+            href="/mentor/{{mentor._id}}">{{mentor.firstName}} {{mentor.lastName}}</a></h3>
+        <p class="card-text">О себе: {{mentor.aboutMe}}</p>
+        <p class="card-text">Опыт: {{mentor.experience}}</p>
+        <p class="card-text">Технологии:</p>
+        <small class="text-muted"></small>
+        {{#each mentor.stack}}
+        <a class="btn btn-outline-primary" href="/tag/{{this._id}}">{{this.tagname}}</a>
+        {{/each}}
+         <div class="btnContact">
+      <a class="btn btn-primary" target="_blank" href="https://web.telegram.org/k/">Написать ментору</a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

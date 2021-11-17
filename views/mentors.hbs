@@ -1,0 +1,43 @@
+<h2 id="allMentors">Наши менторы</h2>
+  {{#if tagSearch}}
+  <h2>Менторы, которые применяют {{tagName.tagname}} </h2>
+  {{#each stackMentors}}
+  <a href="/mentor/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
+  <p>Обо мне: {{this.aboutMe}}</p>
+  <p>Опыт: {{this.experience}}</p>
+  <p>Технологии:</p>
+  {{#each this.stack}}
+  <a href="/tag/{{this._id}}">{{this.tagname}}</a>
+  {{/each}}
+  <hr>
+  {{/each}}
+
+
+  {{else}}
+  <div class="parent">
+    {{#each mentors}}
+    <div class="rowcard">
+      <div class="card">
+        <div class="card-body">
+
+          <h5 class="card-title"><a style="text-decoration: none" class="text-secondary"; href="/mentor/{{this._id}}">{{this.firstName}}
+              {{this.lastName}}</a></h5>
+          <p class="card-text">О себе: {{this.aboutMe}}</p>
+          <p class="card-text">Опыт: {{this.experience}}</p>
+          <div class="card-footer">
+            <p class="card-text">Технологии:</p>
+            <small class="text-muted"></small>
+            {{#each this.stack}}
+            <a class="btn btn-outline-primary" href="/tag/{{this._id}}">{{this.tagname}}</a>
+            {{/each}}
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  
+
+  {{/if}}
+

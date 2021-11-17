@@ -1,0 +1,35 @@
+* {
+  overflow-x: hidden;
+}
+#sitename {
+  font-size: 50px;
+
+  color: black;
+}
+
+#navbarItems {
+  font-size: 20px;
+  margin-left: 17cm;
+}
+
+.nav-item {
+  width: 6cm;
+  color: rgb(245, 245, 245);
+}
+
+/* .carouseltext {
+ color: black;
+} */
+
+.belowcaption {
+  background-color: rgba(160, 148, 131, 0.726);
+  width: 25cm;
+  position: absolute;
+}
+.footer {
+  color: black;
+}
+
+#mentors {
+  margin-top: 3cm;
+}

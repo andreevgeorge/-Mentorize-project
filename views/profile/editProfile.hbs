@@ -1,0 +1,57 @@
+<main id="profileMain">
+ <div class='text-center'><h2>Редактирование профиля</h2></div>
+
+
+{{#if User}}
+  <div id="edit">
+    <form class="form-group col-6 mt-4 mx-auto border border-dark" action="/profile/{{userId}}/edit" method='POST' name="editForm">
+      <p>Имя:</p>
+      <input class="newName form-control" type="text" name="newName" value="{{user.firstName}}">
+      <p>Фамилия:</p>
+      <input class='newLastName form-control' type="text" name="newLastName" value="{{user.lastName}}">
+
+      <p>О вас:</p>
+      <input class="form-control " type="text" id="aboutMe" name="aboutMe" value="{{user.aboutMe}}"></input>
+      <div class='d-flex justify-content-center mx-auto mt-4'><button class='btn-success btn-center' type="submit" value="{{userId}}" id="editButton" >Редактировать</button></div>
+      
+    </form> 
+  </div>
+
+{{else}}
+  <div  id="edit">
+    <form  action="/profile/{{userId}}/edit" method='POST' name="editForm">
+      <p>Имя:</p>
+      <input class="newName form-control" type="text" name="newName" value="{{mentor.firstName}}">
+      
+      <p>Фамилия:</p>
+      <input class='newLastName form-control' type="text" name="newLastName" value="{{mentor.lastName}}">
+
+      <p>О вас:</p>
+      <input class="form-control " type="text" name="aboutMe" value="{{mentor.aboutMe}}"></input>
+
+      <p>Опыт работы:</p>
+      <input class="form-control " type="text" name="experience" value="{{mentor.experience}}"></input>
+      <br>
+      <br>
+      <button class='btn btn-success ' type="submit" value="{{userId}}" id="editButton">Редактировать</button>
+    </form>
+
+    <p>Технологии:</p>
+      <div id="allCurrentTags">
+        {{#each mentor.stack}}
+          <a href="/tag/{{this._id}}" id="{{this._id}}">{{this.tagname}}</a>
+        {{/each}}
+      </div>
+    <br>
+    <select name="tags" id="allTagsSelect">
+      {{#each allTags}}
+        <option value="{{this._id}}">{{this.tagname}}</option>
+      {{/each}}
+    </select>
+    <div class=''><button class='btn btn-success btn-center' id="addStack" value="{{userId}}">Добавить в стэк</button></div>
+    <br>
+        <div class=' mx-auto'> <button class='btn btn-success ' id="deleteStack" value="{{userId}}">Удалить из стэка</button></div>
+   
+  </div>
+{{/if}}
+</main>

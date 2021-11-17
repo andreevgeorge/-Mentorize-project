@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Montserrat:wght@300&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script defer src='/js/profiler.js'></script>
+  {{#if isLogin}}
+    <script defer src='/js/login.js'></script>
+  {{/if}}
+  {{#if isRegister}}
+    <script defer src='/js/register.js'></script>
+  {{/if}}
+  <title>Mentorize</title>
+</head>
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <h1>
+        <a id='sitename' class="navbar-brand ml-5" href="/" class="header-title" >Mentorize</a>
+      </h1>
+      <div id='navbarItems'>
+        <ul class="navbar-nav">
+        {{#if username}}
+          <li class="nav-item"><a class="nav-link" role="button" href="/profile/{{userId}}">Привет, {{username}}</a></li>
+          <li class="nav-item"><a class="nav-link" role="button" href="/profile/{{userId}}">Личный Кабинет</a></li>
+          <li class="nav-item"><a class="nav-link" role="button" href="/mentors">Менторы</a></li>
+          <li class="nav-item"><a class="nav-link" role="button" href="/signout">Выйти</a></li>
+        {{else}}
+          <li class="nav-item"><a class="nav-link" role="button" href="/mentors">Менторы</a></li>
+          <li class="nav-item"><a class="nav-link" role="button" href="/auth/register?mentor=mentor">Стать ментором</a></li>
+          <li class="nav-item"><a class="nav-link" role="button" href="/auth/register?user=user">Cтать менти</a></li>
+          <li><a class="nav-link" role="button" href="/auth/login">Войти</a></li>
+        {{/if}}
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+<main>
+  {{{body}}}
+</main>
+    <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4"
+  >
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h5 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem"></i>Mentorize
+          </h5>
+          <p>
+            Учитесь и развивайтесь с нами.
+            Делитесь знаниями и опытом у нас.
+          </p>
+        </div>
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Важные ссылки
+          </h6>
+          <p>
+            <a class="text-reset" href="/mentors">Наши Менторы</a>
+          </p>
+          <p>
+            <a class="text-reset" href="/auth/register?mentor=mentor">Стать ментором</a>
+          </p>
+          <p>
+            <a class="text-reset" href="/auth/register?user=user">Подобрать ментора</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Отзывы</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Контакты
+          </h6>
+          <p><i class="fas fa-home"></i> Москва, 121357</p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            mentorize@mentorize.com
+          </p>
+          <p><i class="fas fa-phone"></i> + 7 123 456 78 99</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+  </section>
+  <!-- Section: Links  -->
+</footer>
+<!-- Footer -->
+  </div>
+</body>
+
+
+</html>

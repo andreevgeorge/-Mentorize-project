@@ -1,0 +1,28 @@
+<main id="profileMain">
+<div class='text-center'><h1>Добро пожаловать в личный кабинет, {{username}}</h1></div>
+
+
+{{#if User}}
+  <div class='text-center'><h3>Расскажите о себе, чтобы менторы узнали Вас лучше</h3></div>
+
+  <form class='mt-5' data-id="{{id}}" id="currentInfo">
+      <h3>Ваше имя: {{user.firstName}} {{user.lastName}}</h3>
+      <h3>О вас: {{user.aboutMe}}</h3>
+    <a href="/profile/{{userId}}/edit">&#9998;</a>
+  </form>
+
+{{else}}
+<div class='text-center mt-4 mb-5'><h3>Расскажите немного о себе, чтобы ученики узнали Вас лучше.</h3></div>
+ 
+  <form data-id="{{id}}" id="currentInfo">
+    <h3>Ваше имя: {{mentor.firstName}} {{mentor.lastName}}</h3>
+    <h3>О вас: {{mentor.aboutMe}}</h3>
+    <h3>Опыт работы: {{mentor.experience}}</h3>
+    <h3>Технологический стэк:</h3>
+    {{#each mentor.stack}}
+    <a href="/tag/{{this._id}}">{{this.tagname}}</a>
+    {{/each}}
+    <a href="/profile/{{userId}}/edit">&#9998;</a>
+  </form>
+{{/if}}
+</main>

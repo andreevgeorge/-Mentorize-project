@@ -1,0 +1,142 @@
+<div id="carouselExampleCaptions" class="carousel carousel-dark  slide w-75   mx-auto " data-bs-ride="carousel">
+<div class="carousel-indicators">
+  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+</div>
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img src="./img/главный ментор.jpg" class="d-block w-100" alt="Ментор - твой лучший напарник">
+    <div class="carousel-caption belowcaption d-lg-block">
+      <h5>Ментор или наставник — опытный профессионал, <br> источник знаний и ответов</h5>
+      <p>Ментор вдохновляет, помогает развиваться в профессиональной жизни своему подопечному — менти.</p>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <img src="./img/ментор из Европы.jpg" class="d-block w-100" alt="Менторинг - еще один шаг к успеху">
+    <div class="carousel-caption belowcaption d-lg-block">
+      <h5>Чтобы привлечь инвестора, основатели стартапа приходят к ментору. </h5>
+      <p>Он помогает обосновать идею цифрами и составить план развития компании, делится контактами знакомых инвесторов.</p>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <img src="./img/менторы и менти.jpg" class="d-block w-100" alt="Менторинг - реально работающий инструмент">
+    <div class="carousel-caption belowcaption d-lg-block">
+      <h5>По статистике у 30% успешных технологических <br> стартапов были менторы.</h5>
+            <p>Наши наставники имеют богатый опыт работы в различных областях: <br>от практического программирования до экспертизы в подготовке и подборе персонала. </p>
+    </div>
+  </div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+</div>
+<br>
+<br>
+<br>
+<div class=' text-center mb-1'>
+<h1 class="mb-5">Наши менторы</h1>
+</div>
+  <div id='mentors' class=" row row-cols-1 w-75   mx-auto row-cols-3 " >
+    <div class="col">
+      <div class="card h-100">
+        <img src="./img/denis.jpg" class="card-img-top h-75" alt="фото1">
+        <div class="card-body">
+          <h5><a style="text-decoration: none" class="text-secondary" class="card-title" href="/mentor/{{mentor1._id}}">{{mentor1.firstName}} {{mentor1.lastName}}</a></h5>
+          <p class="card-text">{{mentor1.aboutMe}}.</p>
+        </div>
+        <div class="card-footer">
+          {{#each mentor1.stack}}
+          <a class="btn btn-outline-primary" class="text-muted" href="/tag/{{this._id}}">{{this.tagname}}</a>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="./img/bill.jpeg" class="card-img-top h-75" alt="фото2">
+        <div class="card-body">
+          <h5><a style="text-decoration: none" class="text-secondary" class="card-title" href="/mentor/{{mentor2._id}}">{{mentor2.firstName}} {{mentor2.lastName}}</a></h5>
+          <p class="card-text">{{mentor2.aboutMe}}.</p>
+        </div>
+        <div class="card-footer">
+          {{#each mentor2.stack}}
+          <a class="btn btn-outline-primary" class="text-muted" href="/tag/{{this._id}}">{{this.tagname}}</a>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="./img/durov2.jpeg" class="card-img-top h-75" alt="фото3">
+        <div class="card-body">
+          <h5><a style="text-decoration: none" class="text-secondary" class="card-title" href="/mentor/{{mentor3._id}}">{{mentor3.firstName}} {{mentor3.lastName}}</a></h5>
+          <p class="card-text">{{mentor3.aboutMe}}.</p>
+        </div>
+        <div class="card-footer">
+          {{#each mentor3.stack}}
+          <a class="btn btn-outline-primary" class="text-muted" href="/tag/{{this._id}}">{{this.tagname}}</a>
+          {{/each}}
+        </div>
+      </div>
+  </div>
+</div>
+<br><br><br>
+<div class="alert  alert-primary" role="alert"> 
+
+<p class="fw-normal fs-1 text-center">Как это работает?</p>
+</div>
+<br><br><br>
+​
+<div class="row d-flex justify-content-center ">
+<div class="col-sm-5 ">
+  <div class="card shadow">
+    <div class="card-body ">
+      <h5 class="card-title">Подберите технологичеcкий стэк</h5>
+      <p class="card-text">От JS до GO</p>
+      <a href="#" class="btn btn-primary">Подобрать стэк</a>
+    </div>
+  </div>
+</div>
+<div class="col-sm-5">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title">Сравните опыт работы наших наставников</h5>
+      <p class="card-text">от 1 до 10+ лет в коммерческой разработке</p>
+      <a href="#" class="btn btn-primary">Выбрать ментора</a>
+    </div>
+  </div>
+</div>
+</div>
+<br><br><br>
+<div class=" d-flex flex-row justify-content-around mt-5">
+<div class="card shadow-sm col-sm-3">
+  <div class="card-body bg-warning">
+    <h4 class="card-title">1. Зарегистрируйтесь на сайте</h4>
+    <p class="card-text">Заполните поле "о себе", чтобы помочь ментору подготовитсья к первой встрече</p>
+  </div>
+</div>
+<div class="card shadow-sm col-sm-3" >
+  <div class="card-body bg-success">
+    <h4 class="card-title">2. Выберите наставника</h4>
+    <p class="card-text">Мы готовы помочь с выбором, если Вам будет трудно определиться</p>
+  </div>
+</div>
+<div class="card shadow-sm col-sm-3">
+  <div class="card-body bg-info">
+    <h4 class="card-title">3. Свяжитесь с нами</h4>
+    <p class="card-text">Поможем организовать первую встречу с ментором</p>
+  </div>
+</div>
+</div>
+​
+<br><br>
+​
+  </div>
+</div>
+</div>
